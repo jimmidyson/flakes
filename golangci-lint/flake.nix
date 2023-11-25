@@ -2,7 +2,7 @@
   description = "golangci-lint built with go 1.21";
 
   inputs = {
-    nixpkgs.url = "gihub:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
   };
 
