@@ -1,12 +1,4 @@
-{
-  description = "Easily create and use bundles for air-gapped environments ";
-
-  inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    flake-utils.url = "github:numtide/flake-utils";
-  };
-
-  outputs = { self, nixpkgs, flake-utils }:
+{ self, nixpkgs, flake-utils }:
     let
       releaseVersion = "1.12.0";
       releaseBinaries = {
@@ -52,4 +44,3 @@
       };
       packages.default = packages.mindthegap;
     });
-}

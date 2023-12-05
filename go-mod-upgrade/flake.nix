@@ -1,6 +1,3 @@
-# Copyright 2023 D2iQ, Inc. All rights reserved.
-# SPDX-License-Identifier: Apache-2.0
-
 {
   description = "Update outdated Go dependencies interactively";
 
@@ -49,6 +46,5 @@
           install -m755 -D go-mod-upgrade $out/bin/go-mod-upgrade
         '';
       };
-      packages.default = packages.go-mod-upgrade;
     });
 }
