@@ -11,6 +11,7 @@
       with nixpkgs.legacyPackages.${system}; rec {
         packages = rec {
           golangci-lint = pkgs.golangci-lint.override { buildGoModule = buildGo121Module; };
+
           go-apidiff = buildGo121Module {
             name = "go-apidiff";
             src = fetchFromGitHub {
@@ -22,6 +23,19 @@
             doCheck = false;
             subPackages = [ "." ];
             vendorHash = "sha256-GF8mxSVFjaijE8ul9YgMZKaTMTSR5DkwCNY7FZCwiAU=";
+          };
+
+          go-mod-upgrade = buildGo121Module {
+            name = "go-mod-upgrade";
+            src = fetchFromGitHub {
+              owner = "oligot";
+              repo = "go-mod-upgrade";
+              rev = "v0.9.1";
+              hash = "sha256-+C0IMb7MU1fq/P0/tTUNmzznZ1q5M69491pO5yBZlVs=";
+            };
+            doCheck = false;
+            subPackages = [ "." ];
+            vendorHash = "sha256-8rbRxtOiKmnf68kjsUCXaZf+MHI1n5aXa91Aneq9SKo=";
           };
         };
         formatter = alejandra;
