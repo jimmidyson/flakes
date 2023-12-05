@@ -37,7 +37,21 @@
             subPackages = [ "." ];
             vendorHash = "sha256-8rbRxtOiKmnf68kjsUCXaZf+MHI1n5aXa91Aneq9SKo=";
           };
+
+          setup-envtest = buildGo121Module {
+            name = "setup-envtest";
+            src = fetchFromGitHub {
+              owner = "kubernetes-sigs";
+              repo = "controller-runtime";
+              rev = "v0.16.3";
+              hash = "sha256-X4YM4A63UxD650S3lxbxRtZaHOyF7LY6d5eVJe91+5c=";
+            } + "/tools/setup-envtest";
+            doCheck = false;
+            subPackages = [ "." ];
+            vendorHash = "sha256-ISVGxhFQh4e0eag9Sw0Zj4u1cG0tudZLhJcGdH5tDo4=";
+          };
         };
+
         formatter = alejandra;
       }
     );
